@@ -1,13 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
+import { ContactsProvider } from './Context/AppProvider'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 )
 root.render(
   <React.StrictMode>
-    <App />
+    <ContactsProvider>
+      <App />
+    </ContactsProvider>
   </React.StrictMode>
 )
 
