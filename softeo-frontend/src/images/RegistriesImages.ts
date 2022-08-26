@@ -6,7 +6,7 @@ export interface IPayment {
 }
 
 export interface IRegistros {
-  _id: number
+  _id?: number
   cpf: number
   initialDate: string
   name: string
@@ -35,6 +35,7 @@ export interface ContextType {
   setNameSearch: UseState<string>
   loading: boolean
   error: boolean
+  addRegistry: (IRegistros: IRegistros) => void
 }
 
 export interface Props {

@@ -34,6 +34,17 @@ export const ContactsProvider: React.FC<Props> = ({ children }) => {
     setLoading(false)
   }, [])
 
+  const addRegistry = useCallback(async (registry: IRegistros) => {
+    try {
+      await API.post('/', {
+        ...registry
+      })
+      await fetchRegistries()
+    } catch (err) {
+      setError(true)
+    }
+  }, [fetchRegistries])
+
   useEffect(() => {
     void fetchRegistries()
   }, [fetchRegistries])
@@ -44,10 +55,11 @@ export const ContactsProvider: React.FC<Props> = ({ children }) => {
       nameSearch,
       setNameSearch,
       loading,
-      error
+      error,
+      addRegistry
     }
   ), [registries, nameSearch, setNameSearch, loading,
-    error])
+    error, addRegistry])
 
   // const context: TodoContextType = {
   //   registries,
