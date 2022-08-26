@@ -6,21 +6,30 @@ import { RegistriesCard } from './components/RegistriesCard'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const App = () => {
-  const { registries } = React.useContext(AppContext) as ContextType
+  const { registries, loading } = React.useContext(AppContext) as ContextType
   console.log(registries)
+
+  // if (loading) {
+  //   return (
+  //     <div>Loading</div>
+  //   )
+  // }
 
   return (
     <C.Container>
       <C.Navbar>Navbar</C.Navbar>
       <C.Main>
         Main
-        <C.CardList>
+        {!loading
+          ? <C.CardList>
           <RegistriesCard />
           <RegistriesCard />
           <RegistriesCard />
           <RegistriesCard />
           <RegistriesCard />
         </C.CardList>
+          : <div>Loading</div>
+        }
       </C.Main>
       <C.Sidebar>Sidebar</C.Sidebar>
       <C.Content1>Content1</C.Content1>

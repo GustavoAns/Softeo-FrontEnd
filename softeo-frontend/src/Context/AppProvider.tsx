@@ -15,7 +15,7 @@ export const API = axios.create({
 export const ContactsProvider: React.FC<Props> = ({ children }) => {
   const [registries, setRegistries] = useState<IRegistros[]>([])
   const [nameSearch, setNameSearch] = useState<string>('')
-  const [loading, setLoading] = useState<boolean>(false)
+  const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<boolean>(false)
 
   const fetchRegistries = useCallback(async (): Promise<void> => {

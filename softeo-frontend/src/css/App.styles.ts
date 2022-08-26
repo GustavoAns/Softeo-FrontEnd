@@ -74,13 +74,13 @@ export const Footer = styled.footer`
 export const Card = styled.div`
   border-radius: 1rem;
   padding: 0.5rem;
-  background: #4a4f4b;
+  background: #d3e877;
   box-shadow: 0 0 10px 5px gray;
   display:grid;
   width: 20rem;
   height: 11rem;
   grid-template-columns: 9fr 1fr;
-  grid-template-rows: 1fr 3fr 3fr 3fr 3fr 3fr 1fr;
+  grid-template-rows: 1fr 3fr 3fr 3fr 4fr 3fr 1fr;
   grid-template-areas:
     '. button1'
     'cardname button1'
@@ -92,27 +92,42 @@ export const Card = styled.div`
   grid-gap: 0.2rem;
 `
 export const Cardname = styled.div`
-  background: blue;
+  border-radius: 1rem;
+  padding-top: 0.5rem;
+  padding-left: 0.4em;
+  background: #e9f390;
   grid-area: cardname;
 `
 export const Cardcpf = styled.div`
-  background: #1de9b6;
+  border-radius: 1rem;
+  padding: 0.2rem;
+  padding-left: 0.4em;
+  background: #e9f390;
   grid-area: cardcpf;
 `
 export const Cardintdate = styled.div`
-  background: red;
+  border-radius: 1rem;
+  padding-left: 0.4em;
+  background: #e9f390;
   grid-area: cardintdate;
 `
 export const Cardvalue = styled.div`
-  background: red;
+  border-radius: 1rem;
+  padding-left: 0.4em;
+  background: #e9f390;
   grid-area: cardvalue;
 `
 export const Cardinstallments = styled.div`
-  background: red;
+  border-radius: 1rem;
+  padding-top: 0.5rem;
+  padding-left: 0.4em;
+  background: #e9f390;
   grid-area: cardinstallments;
 `
 
 export const Button1 = styled.button`
+  color: white;
+  font-size: 2rem;
   background: green;
   border: 2;
   border-radius: 50px;
@@ -121,7 +136,8 @@ export const Button1 = styled.button`
   grid-area: button1;
 `
 export const Button2 = styled.button`
-  background: blue;
+  font-size: 1.2rem;
+  background: orange;
   border: 2;
   border-radius: 50px;
   height: 50px;
@@ -129,7 +145,9 @@ export const Button2 = styled.button`
   grid-area: button2;
 `
 export const Button3 = styled.button`
-  background: yellow;
+  color: white;
+  font-size: 2rem;
+  background: red;
   border: 2;
   border-radius: 50px;
   height: 50px;
