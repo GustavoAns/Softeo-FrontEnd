@@ -154,3 +154,26 @@ export const Button3 = styled.button`
   width: 50px;
   grid-area: button3;
 `
+
+export const Filters = styled.div`
+  background: red;
+`
+
+export const Label = styled.label`
+  background: green;
+  border-radius: 1rem;
+`
+
+export const Input = styled.input`
+  background: blue;
+  border-radius: 1rem;
+  display: block;
+`
+
+export const ButtonReset = styled.button`
+  background: #20ff03;
+  border-radius: 1rem;
+  height: 50px;
+  width: 50px;
+  font-size: 2.5rem;
+`

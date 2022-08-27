@@ -23,21 +23,39 @@ export interface APIRegistrosArry {
   data: IRegistros[]
 }
 
-export interface TodoErrorResponse {
-  error: String
-}
-
 type UseState<S> = (action: S | ((prevState: S) => S)) => void
+
+type handleChange = (value: string, checked: boolean, name: string) => void
+
+type eventHandleChange<T extends HTMLElement> = (
+  event: React.ChangeEvent<T>
+) => void
+
+export type Change<T extends HTMLElement> = handleChange | eventHandleChange<T>
+
+export interface buttonProps {
+  onChange?: Change<HTMLInputElement>
+}
 
 export interface ContextType {
   registries: IRegistros[]
-  nameSearch: string
-  setNameSearch: UseState<string>
+  filters: IFilters
+  handleFiltersInput: (event: React.ChangeEvent<HTMLInputElement> | Date, dateName?: string) => void
   loading: boolean
   error: boolean
   addRegistry: (IRegistros: IRegistros) => void
+  startDate: Date
+  setStartDate: UseState<Date>
+  filtedRegistries: IRegistros[]
 }
 
 export interface Props {
   children: React.ReactNode
+}
+
+export interface IFilters {
+  name: string
+  cpf: string
+  startDate: Date
+  finalDate: Date
 }
