@@ -3,10 +3,11 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import Modal from 'react-modal'
-import { object, string } from 'yup'
+import { object, string, number } from 'yup'
 import { AppContext } from '../Context/AppProvider'
 import * as C from '../css/App.styles'
-import { ContextType } from '../images/RegistriesImages'
+import { ContextType, IDataform } from '../images/RegistriesImages'
+import { createPayments } from '../helpers/CreateRegistry'
 
 const customStyles = {
   content: {
@@ -28,16 +29,32 @@ interface FormValues {
 }
 
 const schema = object({
-  name: string().required('O Nome é necessário')
+  name: string().required('O Nome é necessário').max(50, 'O limite de letras é de 50'),
+  cpf: string().matches(/^[0-9]+$/, 'Insira somente numeros').min(11, 'O cpf deve ter 11 digitos').max(11, 'O cpf deve ter 11 digitos'),
+  value: number().required('O valor é necessário').max(1000000, 'O valor maximo é de R$1000000').min(1, 'O valor minimo é de R$1'),
+  totalInstallments: number().max(12, 'O limete de parcelas é de 12').min(1, 'A quantidade minima de parcelas é de 1')
 })
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const AddRegistriesModal = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ resolver: yupResolver(schema) })
+  const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ defaultValues: { value: 0, totalInstallments: 1 }, resolver: yupResolver(schema) })
 
-  const onSubmit = (data: any): void => console.log(data)
+  const onSubmit = (data: IDataform): void => {
+    const paymentsArray = createPayments(data)
+    const toDayDate = new Date()
+    const payment = {
+      cpf: parseInt(data.cpf),
+      initialDate: toDayDate.toISOString(),
+      name: data.name,
+      value: data.value,
+      totalInstallments: data.totalInstallments,
+      payments: paymentsArray
+    }
+    addRegistry(payment)
+    setModalIsOpen(false)
+  }
 
-  const { modalIsOpen, setModalIsOpen } = React.useContext(AppContext) as ContextType
+  const { modalIsOpen, setModalIsOpen, addRegistry } = React.useContext(AppContext) as ContextType
 
   return (
     <Modal
@@ -63,17 +80,17 @@ export const AddRegistriesModal = () => {
           // value={ }
           // onChange={ (e: any) => handleFiltersInput(e) }
         />
-        <C.Error>{errors?.name?.message}</C.Error>
+        <C.Error>{errors?.cpf?.message}</C.Error>
       </C.Labelmodal2>
       <C.Labelmodal3>
         *Valor: ↴
         <C.Inputmodal
-          type="text"
+          type="number"
           {...register('value')}
           // value={ }
           // onChange={ (e: any) => handleFiltersInput(e) }
         />
-        <C.Error>{errors?.name?.message}</C.Error>
+        <C.Error>{errors?.value?.message}</C.Error>
       </C.Labelmodal3>
       <C.Labelmodal4>
         Parcelas: ↴
@@ -83,10 +100,10 @@ export const AddRegistriesModal = () => {
           // value={ }
           // onChange={ (e: any) => handleFiltersInput(e) }
         />
-        <C.Error>{errors?.name?.message}</C.Error>
+        <C.Error>{errors?.totalInstallments?.message}</C.Error>
       </C.Labelmodal4>
       <C.Buttonsmodal>
-        <C.Buttonmodalcancel type="submit">X</C.Buttonmodalcancel>
+        <C.Buttonmodalcancel onClick={() => setModalIsOpen(false)}>X</C.Buttonmodalcancel>
         <C.Buttonmodalcreate type="submit">+</C.Buttonmodalcreate>
       </C.Buttonsmodal>
       </C.Containermodal>

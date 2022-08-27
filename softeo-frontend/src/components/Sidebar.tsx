@@ -41,11 +41,11 @@ export const Sidebar = () => {
       </C.Label>
       <C.Label>
         Data Inicial
-        <DatePicker dateFormat="dd/mm/yyyy" selected={filters.startDate} onChange={(date: any) => handleFiltersInput(date, 'startDate')}/>
+        <DatePicker dateFormat="dd/MM/yyyy" selected={filters.startDate} onChange={(date: any) => handleFiltersInput(date, 'startDate')}/>
       </C.Label>
       <C.Label>
         Data Final
-        <DatePicker dateFormat="dd/mm/yyyy" selected={filters.finalDate} onChange={(date: any) => handleFiltersInput(date, 'finalDate')}/>
+        <DatePicker dateFormat="dd/MM/yyyy" selected={filters.finalDate} onChange={(date: any) => handleFiltersInput(date, 'finalDate')}/>
       </C.Label>
       <C.ButtonReset onClick={() => setModalIsOpen(true)}>+</C.ButtonReset>
     </C.Filters>

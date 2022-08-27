@@ -2,6 +2,7 @@ export interface IPayment {
   number: number
   value: number
   paid: boolean
+  method: string
   limiteDate: string
 }
 
@@ -24,18 +25,6 @@ export interface APIRegistrosArry {
 }
 
 type UseState<S> = (action: S | ((prevState: S) => S)) => void
-
-type handleChange = (value: string, checked: boolean, name: string) => void
-
-type eventHandleChange<T extends HTMLElement> = (
-  event: React.ChangeEvent<T>
-) => void
-
-export type Change<T extends HTMLElement> = handleChange | eventHandleChange<T>
-
-export interface buttonProps {
-  onChange?: Change<HTMLInputElement>
-}
 
 export interface ContextType {
   registries: IRegistros[]
@@ -60,4 +49,11 @@ export interface IFilters {
   cpf: string
   startDate: Date
   finalDate: Date
+}
+
+export interface IDataform {
+  cpf: string
+  name: string
+  totalInstallments: number
+  value: number
 }
