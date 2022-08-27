@@ -11,7 +11,7 @@ import { ContextType } from '../images/RegistriesImages'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const Sidebar = () => {
-  const { filters, handleFiltersInput } = React.useContext(AppContext) as ContextType
+  const { filters, handleFiltersInput, setModalIsOpen } = React.useContext(AppContext) as ContextType
 
   // if (loading) {
   //   return (
@@ -47,7 +47,7 @@ export const Sidebar = () => {
         Data Final
         <DatePicker dateFormat="dd/mm/yyyy" selected={filters.finalDate} onChange={(date: any) => handleFiltersInput(date, 'finalDate')}/>
       </C.Label>
-      <C.ButtonReset>+</C.ButtonReset>
+      <C.ButtonReset onClick={() => setModalIsOpen(true)}>+</C.ButtonReset>
     </C.Filters>
   )
 }

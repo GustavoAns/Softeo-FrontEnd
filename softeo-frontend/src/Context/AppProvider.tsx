@@ -26,6 +26,7 @@ export const ContactsProvider: React.FC<Props> = ({ children }) => {
   const [startDate, setStartDate] = useState(new Date())
   const [loading, setLoading] = useState<boolean>(true)
   const [error, setError] = useState<boolean>(false)
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false)
 
   const fetchRegistries = useCallback(async (): Promise<void> => {
     setLoading(true)
@@ -135,7 +136,9 @@ export const ContactsProvider: React.FC<Props> = ({ children }) => {
       addRegistry,
       startDate,
       setStartDate,
-      filtedRegistries
+      filtedRegistries,
+      modalIsOpen,
+      setModalIsOpen
     }
   ), [registries, filters, handleFiltersInput, loading,
     error, addRegistry])

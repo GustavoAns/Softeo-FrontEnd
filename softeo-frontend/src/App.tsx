@@ -1,10 +1,13 @@
 import React from 'react'
+import Modal from 'react-modal'
 import * as C from './css/App.styles'
 // import { AppContext } from './Context/AppProvider'
 // import { ContextType } from './images/RegistriesImages'
 import { CardList } from './components/CardList'
 import { Sidebar } from './components/Sidebar'
+import { AddRegistriesModal } from './components/AddRegistriesModal'
 
+Modal.setAppElement('#root')
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const App = () => {
   // const { registries } = React.useContext(AppContext) as ContextType
@@ -17,6 +20,7 @@ const App = () => {
 
   return (
     <C.Container>
+      <AddRegistriesModal />
       <C.Navbar>Navbar</C.Navbar>
       <C.Main>
         Main

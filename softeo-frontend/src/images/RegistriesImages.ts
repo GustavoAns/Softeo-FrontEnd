@@ -47,6 +47,8 @@ export interface ContextType {
   startDate: Date
   setStartDate: UseState<Date>
   filtedRegistries: IRegistros[]
+  modalIsOpen: boolean
+  setModalIsOpen: UseState<boolean>
 }
 
 export interface Props {

@@ -162,6 +162,9 @@ export const Filters = styled.div`
 export const Label = styled.label`
   background: green;
   border-radius: 1rem;
+  height: 2.6rem;
+  width: 11.6rem;
+  grid-area: inputmodal1;
 `
 
 export const Input = styled.input`
@@ -176,4 +179,78 @@ export const ButtonReset = styled.button`
   height: 50px;
   width: 50px;
   font-size: 2.5rem;
+`
+
+export const Containermodal = styled.form`
+  display:grid;
+  max-width: 300px;
+  height: 370px;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 11rem))
+`
+export const Labelmodal1 = styled.label`
+  background: white;
+  border-radius: 1rem;
+  margin: auto;
+  font-size: 1.5rem;
+`
+export const Labelmodal2 = styled.label`
+  background: white;
+  border-radius: 1rem;
+  margin: auto;
+  font-size: 1.5rem;
+`
+export const Labelmodal3 = styled.label`
+  background: white;
+  border-radius: 1rem;
+  margin: auto;
+  font-size: 1.5rem;
+`
+export const Labelmodal4 = styled.label`
+  background: white;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  margin: auto;
+`
+
+export const Inputmodal = styled.input`
+  background: white;
+  border-radius: 1rem;
+  display: block;
+`
+
+export const Buttonsmodal = styled.div`
+  display:flex-box;
+  max-width: 300px;
+  display: inline
+`
+
+export const Buttonmodalcreate = styled.button`
+  background: #20ff03;
+  border-radius: 1rem;
+  height: 50px;
+  width: 50px;
+  font-size: 2.5rem;
+  grid-area: buttonmodalcreate;
+  margin-left: 46%;
+`
+export const Buttonmodalcancel = styled.button`
+  background: red;
+  border-radius: 1rem;
+  height: 50px;
+  width: 50px;
+  font-size: 2.5rem;
+  grid-area: buttonmodalcancel;
+  margin-left: 10%;
+`
+
+export const Titlemodal = styled.h2`
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  height: 1px;
+`
+
+export const Error = styled.span`
+  color: red;
+  font-size: 0.8rem;
 `
