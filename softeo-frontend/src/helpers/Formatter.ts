@@ -5,7 +5,7 @@ const zeroLeftFormatter = (num: number): string => {
 export const stringDateFormatter = (stringDate: string): string => {
   const date = new Date(stringDate)
   const day = zeroLeftFormatter(date.getDate())
-  const month = zeroLeftFormatter(date.getMonth())
+  const month = zeroLeftFormatter(date.getMonth() + 1)
   const year = zeroLeftFormatter(date.getFullYear())
   return `${day}/${month}/${year}`
 }

@@ -62,17 +62,17 @@ export const AddRegistriesModal = () => {
       onRequestClose={() => setModalIsOpen(false)}
       style={customStyles}
     >
-      <C.Containermodal onSubmit={handleSubmit(onSubmit)}>
+      <C.Containerpaymentsmodal onSubmit={handleSubmit(onSubmit)}>
         <C.Titlemodal>Criar Venda</C.Titlemodal>
-      <C.Labelmodal1>
+      <C.Labelmodal>
         *Nome: ↴
         <C.Inputmodal
           type="text"
           {...register('name')}
         />
         <C.Error>{errors?.name?.message}</C.Error>
-      </C.Labelmodal1>
-      <C.Labelmodal2>
+      </C.Labelmodal>
+      <C.Labelmodal>
         *CPF: ↴
         <C.Inputmodal
           type="text"
@@ -81,8 +81,8 @@ export const AddRegistriesModal = () => {
           // onChange={ (e: any) => handleFiltersInput(e) }
         />
         <C.Error>{errors?.cpf?.message}</C.Error>
-      </C.Labelmodal2>
-      <C.Labelmodal3>
+      </C.Labelmodal>
+      <C.Labelmodal>
         *Valor: ↴
         <C.Inputmodal
           type="number"
@@ -91,8 +91,8 @@ export const AddRegistriesModal = () => {
           // onChange={ (e: any) => handleFiltersInput(e) }
         />
         <C.Error>{errors?.value?.message}</C.Error>
-      </C.Labelmodal3>
-      <C.Labelmodal4>
+      </C.Labelmodal>
+      <C.Labelmodal>
         Parcelas: ↴
         <C.Inputmodal
           type="number"
@@ -101,12 +101,12 @@ export const AddRegistriesModal = () => {
           // onChange={ (e: any) => handleFiltersInput(e) }
         />
         <C.Error>{errors?.totalInstallments?.message}</C.Error>
-      </C.Labelmodal4>
+      </C.Labelmodal>
       <C.Buttonsmodal>
         <C.Buttonmodalcancel onClick={() => setModalIsOpen(false)}>X</C.Buttonmodalcancel>
         <C.Buttonmodalcreate type="submit">+</C.Buttonmodalcreate>
       </C.Buttonsmodal>
-      </C.Containermodal>
+      </C.Containerpaymentsmodal>
     </Modal>
   )
 }

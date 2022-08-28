@@ -56,6 +56,28 @@ export const ContactsProvider: React.FC<Props> = ({ children }) => {
     }
   }, [fetchRegistries])
 
+  const editRegistryById = useCallback(async (registry: IRegistros) => {
+    try {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      await API.put(`/${registry._id}`, {
+        ...registry
+      })
+      await fetchRegistries()
+    } catch (err) {
+      setError(true)
+    }
+  }, [fetchRegistries])
+
+  const removeRegistryById = useCallback(async (registry: IRegistros) => {
+    try {
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      await API.delete(`/${registry._id}`)
+      await fetchRegistries()
+    } catch (err) {
+      setError(true)
+    }
+  }, [fetchRegistries])
+
   useEffect(() => {
     void fetchRegistries()
   }, [fetchRegistries])
@@ -138,7 +160,9 @@ export const ContactsProvider: React.FC<Props> = ({ children }) => {
       setStartDate,
       filtedRegistries,
       modalIsOpen,
-      setModalIsOpen
+      setModalIsOpen,
+      editRegistryById,
+      removeRegistryById
     }
   ), [registries, filters, handleFiltersInput, loading,
     error, addRegistry])

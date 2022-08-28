@@ -24,7 +24,7 @@ export interface APIRegistrosArry {
   data: IRegistros[]
 }
 
-type UseState<S> = (action: S | ((prevState: S) => S)) => void
+export type UseState<S> = (action: S | ((prevState: S) => S)) => void
 
 export interface ContextType {
   registries: IRegistros[]
@@ -38,6 +38,8 @@ export interface ContextType {
   filtedRegistries: IRegistros[]
   modalIsOpen: boolean
   setModalIsOpen: UseState<boolean>
+  editRegistryById: (IRegistros: IRegistros) => void
+  removeRegistryById: (IRegistros: IRegistros) => void
 }
 
 export interface Props {
