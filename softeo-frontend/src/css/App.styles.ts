@@ -237,7 +237,14 @@ export const Error = styled.span`
   font-size: 0.8rem;
 `
 
-export const Containermediummodal = styled.div`
+export const Containereditmodal = styled.div`
+  display:grid;
+  max-width: 300px;
+  height: 370px;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 11rem))
+`
+export const Containereditmodal2 = styled.form`
   display:grid;
   max-width: 300px;
   height: 370px;
@@ -327,4 +334,25 @@ export const Buttonclose = styled.button`
   width: 25px;
   grid-area: buttonclose;
   margin-left: 90%;
+`
+
+export const Editinfos = styled.div`
+  display:grid;
+  max-width: 300px;
+  height: 370px;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 11rem))
+`
+export const Buttoncloseedit = styled.button`
+  color: white;
+  background: red;
+  border: 1;
+  border-radius: 50px;
+  height: 25px;
+  width: 25px;
+  grid-area: buttoncloseedit;
+  margin-left: 90%;
+`
+
+export const NameEditModal = styled.button`
+  
 `

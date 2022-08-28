@@ -53,3 +53,30 @@ export const removePayments = (payments: IPayment[], num: number): IPayment[] =>
   }
   return acc
 }
+
+export const resizePayments = (payments: IPayment[], num: number): IPayment[] => {
+  const acc: IPayment[] = []
+  if (payments.length < num) {
+    for (let i = 0; i < num; i++) {
+      if (i < payments.length) {
+        acc.push(payments[i])
+      } else {
+        const newDate = new Date(payments[0].limiteDate)
+        newDate.setMonth(newDate.getMonth() + (i + 1))
+        const obj = {
+          number: (i + 1),
+          value: 0,
+          paid: false,
+          method: '',
+          limiteDate: newDate.toISOString()
+        }
+        acc.push(obj)
+      }
+    }
+  } else {
+    for (let i = 0; i < num; i++) {
+      acc.push(payments[i])
+    }
+  }
+  return acc
+}

@@ -41,7 +41,7 @@ export const PaymentsModal = (prop: Props) => {
       onRequestClose={() => prop.setModalCardIsOpen(false)}
       style={customStyles}
     >
-      <C.Containermediummodal>
+      <C.Containereditmodal>
         <C.Registyinfos>
           <C.Buttonclose onClick={() => prop.setModalCardIsOpen(false)}>X</C.Buttonclose>
           <C.Modalinfo1>
@@ -58,7 +58,7 @@ export const PaymentsModal = (prop: Props) => {
           </C.Modalinfo4>
         </C.Registyinfos>
         <CardListPymants registry={prop.registry}/>
-      </C.Containermediummodal>
+      </C.Containereditmodal>
     </Modal>
   )
 }
