@@ -15,3 +15,17 @@ export const valueFormatter = (value: number): string => {
   const formatNumber = new Intl.NumberFormat('pt-BR', options)
   return formatNumber.format(value)
 }
+
+export const month = ['Janeiro',
+  'Fevereiro',
+  'Março',
+  'Abril',
+  'Maio',
+  'Junho',
+  'Julho',
+  'Agosto',
+  'Setembro',
+  'Outubro',
+  'Novembro',
+  'Dezembro'
+]

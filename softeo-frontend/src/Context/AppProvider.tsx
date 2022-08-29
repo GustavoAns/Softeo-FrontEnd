@@ -162,7 +162,9 @@ export const ContactsProvider: React.FC<Props> = ({ children }) => {
       modalIsOpen,
       setModalIsOpen,
       editRegistryById,
-      removeRegistryById
+      removeRegistryById,
+      setFilters,
+      applyFilters
     }
   ), [registries, filters, handleFiltersInput, loading,
     error, addRegistry])

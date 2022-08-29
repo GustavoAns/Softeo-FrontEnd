@@ -1,4 +1,5 @@
-import { IPayment } from '../images/RegistriesImages'
+/* eslint-disable array-callback-return */
+import { IPayment, IRegistros } from '../images/RegistriesImages'
 
 export const sumPayments = (payments: IPayment[]): number => {
   let acc = 0
@@ -7,6 +8,23 @@ export const sumPayments = (payments: IPayment[]): number => {
     if (payment.paid) {
       acc += payment.value
     }
+  })
+  return acc
+}
+
+interface FormValues {
+  method: string
+  value: number
+}
+
+export const sumAllPayments = (registries: IRegistros[]): number => {
+  let acc = 0
+  registries.map((registry) => {
+    registry.payments.map((payment) => {
+      if (payment.paid) {
+        acc += payment.value
+      }
+    })
   })
   return acc
 }

@@ -40,6 +40,8 @@ export interface ContextType {
   setModalIsOpen: UseState<boolean>
   editRegistryById: (IRegistros: IRegistros) => void
   removeRegistryById: (IRegistros: IRegistros) => void
+  setFilters: UseState<IFilters>
+  applyFilters: (newFilters: IFilters, data?: IRegistros[]) => void
 }
 
 export interface Props {

@@ -37,7 +37,7 @@ const schema = object({
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const AddRegistriesModal = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ defaultValues: { value: 0, totalInstallments: 1 }, resolver: yupResolver(schema) })
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<FormValues>({ defaultValues: { value: 0, totalInstallments: 1 }, resolver: yupResolver(schema) })
 
   const onSubmit = (data: IDataform): void => {
     const paymentsArray = createPayments(data)
@@ -103,7 +103,12 @@ export const AddRegistriesModal = () => {
         <C.Error>{errors?.totalInstallments?.message}</C.Error>
       </C.Labelmodal>
       <C.Buttonsmodal>
-        <C.Buttonmodalcancel onClick={() => setModalIsOpen(false)}>X</C.Buttonmodalcancel>
+        <C.Buttonmodalcancel onClick={() => {
+          reset()
+          setModalIsOpen(false)
+        }}>
+          X
+        </C.Buttonmodalcancel>
         <C.Buttonmodalcreate type="submit">+</C.Buttonmodalcreate>
       </C.Buttonsmodal>
       </C.Containerpaymentsmodal>

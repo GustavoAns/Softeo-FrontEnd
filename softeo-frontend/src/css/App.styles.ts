@@ -11,7 +11,7 @@ export const Container = styled.div`
     'sidebar main main main'
     'sidebar content1 content2 content3'
     'sidebar footer footer footer';
-  grid-gap: 0.2rem;
+    grid-gap: 0.2rem;
   ${media.lessThan('lg')`
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 4fr 6fr 22fr 8fr 2fr;
@@ -54,16 +54,19 @@ export const Sidebar = styled.div`
 export const Content1 = styled.div`
   background: #6fffd2;
   grid-area: content1;
+  text-align:center;
 `
 
 export const Content2 = styled.div`
   background: #64ffda;
   grid-area: content2;
+  text-align:center;
 `
 
 export const Content3 = styled.div`
   background: #73ffba;
   grid-area: content3;
+  text-align:center;
 `
 
 export const Footer = styled.footer`
@@ -157,6 +160,28 @@ export const Button3 = styled.button`
 
 export const Filters = styled.div`
   background: red;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.7fr 1fr 1fr 1fr;
+  grid-template-areas:
+    'SimpleHr SimpleHr'
+    'LabelSideBar1 LabelSideBar2'
+    'LabelSideBar3 LabelSideBar4'
+    'ButtonRestFilters ButtonCreate';
+  grid-gap: 0.2rem;
+
+  ${media.greaterThan('lg')`
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+  grid-template-areas:
+  'ButtonRestFilters ButtonCreate'
+  'SimpleHr SimpleHr'
+  'LabelSideBar1 LabelSideBar1'
+  'LabelSideBar2 LabelSideBar2'
+  'LabelSideBar3 LabelSideBar3'
+  'LabelSideBar4 LabelSideBar4';
+  height: 80%;
+ `};
 `
 
 export const Label = styled.label`
@@ -167,10 +192,63 @@ export const Label = styled.label`
   grid-area: inputmodal1;
 `
 
+export const LabelSideBar1 = styled.label`
+  background: green;
+  border-radius: 1rem;
+  height: 2.6rem;
+  width: 10rem;
+  grid-area: LabelSideBar1;
+  margin: auto;
+`
+
+export const LabelSideBar2 = styled.label`
+  background: green;
+  border-radius: 1rem;
+  height: 2.6rem;
+  width: 10rem;
+  grid-area: LabelSideBar2;
+  margin: auto;
+`
+
+export const LabelSideBar3 = styled.label`
+  background: green;
+  border-radius: 1rem;
+  height: 2.6rem;
+  width: 10rem;
+  grid-area: LabelSideBar3;
+  margin: auto;
+`
+
+export const LabelSideBar4 = styled.label`
+  background: green;
+  border-radius: 1rem;
+  height: 2.6rem;
+  width: 10rem;
+  grid-area: LabelSideBar4;
+  margin: auto;
+`
+export const ButtonRestFilters = styled.button`
+  background: orange;
+  border-radius: 1rem;
+  height: 50px;
+  width: 105px;
+  margin: auto;
+  grid-area: ButtonRestFilters;
+`
+export const ButtonCreate = styled.button`
+  background: #20ff03;
+  border-radius: 1rem;
+  height: 50px;
+  width: 105px;
+  margin: auto;
+  grid-area: ButtonCreate;
+`
+
 export const Input = styled.input`
   background: blue;
   border-radius: 1rem;
-  display: block;
+  display: grid;
+  width: 150px;
 `
 
 export const ButtonReset = styled.button`
@@ -355,4 +433,16 @@ export const Buttoncloseedit = styled.button`
 
 export const NameEditModal = styled.button`
   
+`
+
+export const SimpleTitle = styled.h1`
+  grid-area: SimpleHr;
+  font-size: 2.7rem;
+  border: 5px solid black;
+  border-radius: 2rem;
+  margin: auto;
+
+  ${media.lessThan('lg')`
+  font-size: 1.5rem;
+ `};
 `
