@@ -25,8 +25,6 @@ export const Content1 = () => {
         return item
       }
     })
-    console.log(registries)
-    console.log(newRegistries)
     setFiltredRegistries(newRegistries)
   }
 
@@ -36,7 +34,9 @@ export const Content1 = () => {
 
   return (
     <C.Content1>
-      Mes: {month[toDay.getMonth()]}
+      <C.HeavySpan>
+        Mes: {month[toDay.getMonth()]}
+      </C.HeavySpan>
       <br />
       Total recebido: {valueFormatter(sumAllPayments(filtredRegistries))}
     </C.Content1>

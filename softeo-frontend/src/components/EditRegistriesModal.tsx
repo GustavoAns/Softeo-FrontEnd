@@ -57,7 +57,6 @@ export const EditRegistriesModal = (prop: Props) => {
       totalInstallments: data.totalInstallments,
       payments: paymentsArray
     }
-    console.log(payment)
     editRegistryById(payment)
     prop.setEditModalIsOpen(false)
   }

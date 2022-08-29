@@ -26,9 +26,9 @@ export const Sidebar = () => {
 
   return (
     <C.Filters>
-      <C.SimpleTitle>⠀Filtros⠀</C.SimpleTitle>
+      <C.SimpleTitle><C.HeavySpan>⠀Filtros⠀</C.HeavySpan></C.SimpleTitle>
       <C.LabelSideBar1>
-        Nome:
+      <C.HeavySpan>Nome:</C.HeavySpan>
         <C.Input
           type="text"
           name="name"
@@ -37,7 +37,7 @@ export const Sidebar = () => {
         ></C.Input>
       </C.LabelSideBar1>
       <C.LabelSideBar2>
-        CPF:
+      <C.HeavySpan>CPF:</C.HeavySpan>
         <C.Input
           type="text"
           name="cpf"
@@ -46,11 +46,11 @@ export const Sidebar = () => {
         ></C.Input>
       </C.LabelSideBar2>
       <C.LabelSideBar3>
-        Data Inicial:
+      <C.HeavySpan>Data Inicial:</C.HeavySpan>
         <DatePicker wrapperClassName="date-picker" className='date' dateFormat="dd/MM/yyyy" selected={filters.startDate} onChange={(date: any) => handleFiltersInput(date, 'startDate')}/>
       </C.LabelSideBar3>
       <C.LabelSideBar4>
-        Data Final:
+      <C.HeavySpan>Data Final:</C.HeavySpan>
         <style>
           {`.date-picker input {
             width: 150px;

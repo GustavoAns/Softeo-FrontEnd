@@ -24,19 +24,24 @@ export const RegistriesCard = (prop: Props) => {
       <PaymentsModal registry={prop.registry} modalCardIsOpen={modalCardIsOpen} setModalCardIsOpen={setModalCardIsOpen}/>
       <EditRegistriesModal registry={prop.registry} editModalIsOpen={editModalIsOpen} setEditModalIsOpen={setEditModalIsOpen}/>
       <C.Cardname>
-        Nome: {name}
+        <C.HeavySpan>Nome: </C.HeavySpan>
+        {name}
       </C.Cardname>
       <C.Cardcpf>
+        <C.HeavySpan>CPF: </C.HeavySpan>
         CPF: {cpf}
       </C.Cardcpf>
       <C.Cardintdate>
-        Data Inicial: {stringDateFormatter(initialDate)}
+        <C.HeavySpan>Data Inicial: </C.HeavySpan>
+        {stringDateFormatter(initialDate)}
       </C.Cardintdate>
       <C.Cardvalue>
-        Valor: {valueFormatter(value)}
+      <C.HeavySpan>Valor: </C.HeavySpan>
+        {valueFormatter(value)}
       </C.Cardvalue>
       <C.Cardinstallments>
-        Parcelas Acordadas: {totalInstallments}
+        <C.HeavySpan>Parcelas Acordadas: </C.HeavySpan>
+        {totalInstallments}
       </C.Cardinstallments>
       <C.Button1 onClick={() => setModalCardIsOpen(true)}>$</C.Button1>
       <C.Button2 onClick={() => setEditModalIsOpen(true)}>Edit</C.Button2>

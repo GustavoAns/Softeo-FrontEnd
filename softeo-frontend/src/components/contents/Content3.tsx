@@ -23,7 +23,9 @@ export const Content3 = () => {
   ) {
     return (
       <C.Content3>
-        Todos os Filtros:
+        <C.HeavySpan>
+          Todos os Filtros:
+        </C.HeavySpan>
         <br />
         Altere algum filtro para exibir o ganho total e as pendencias
       </C.Content3>
@@ -32,7 +34,9 @@ export const Content3 = () => {
 
   return (
     <C.Content3>
-      Todos os Filtros:
+      <C.HeavySpan>
+        Todos os Filtros:
+      </C.HeavySpan>
       <br />
       Total recebido: {valueFormatter(sumAllPayments(filtedRegistries))}
     </C.Content3>

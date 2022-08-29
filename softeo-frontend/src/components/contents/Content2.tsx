@@ -46,7 +46,9 @@ export const Content2 = () => {
   if (stringDateFormatter(filters.startDate.toISOString()) === stringDateFormatter(filters.finalDate.toISOString())) {
     return (
       <C.Content2>
-        Datas dos Filtros:
+        <C.HeavySpan>
+          Informações de um periodo:
+        </C.HeavySpan>
         <br />
         Altere alguma data para exibir o ganho total e as pendencias
       </C.Content2>
@@ -55,9 +57,11 @@ export const Content2 = () => {
 
   return (
     <C.Content2>
-      De {stringDateFormatter(filters.startDate.toISOString())}
-      <br />
-      Até {stringDateFormatter(filters.finalDate.toISOString())}
+      <C.HeavySpan>
+        De {stringDateFormatter(filters.startDate.toISOString())}
+        <br />
+        Até {stringDateFormatter(filters.finalDate.toISOString())}
+      </C.HeavySpan>
       <br />
       Total recebido: {valueFormatter(sumAllPayments(filtredRegistries))}
     </C.Content2>

@@ -9,6 +9,8 @@ import { AddRegistriesModal } from './components/AddRegistriesModal'
 import { Content1 } from './components/contents/Content1'
 import { Content2 } from './components/contents/Content2'
 import { Content3 } from './components/contents/Content3'
+import { NavBar } from './components/NavBar'
+import { Footer } from './components/Footer'
 
 Modal.setAppElement('#root')
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
@@ -16,9 +18,8 @@ const App = () => {
   return (
     <C.Container>
       <AddRegistriesModal />
-      <C.Navbar>Navbar</C.Navbar>
+      <NavBar />
       <C.Main>
-        Main
         <CardList />
       </C.Main>
       <C.Sidebar>
@@ -27,7 +28,7 @@ const App = () => {
       <Content1 />
       <Content2 />
       <Content3 />
-      <C.Footer>Footer</C.Footer>
+      <Footer />
     </C.Container>
   )
 }

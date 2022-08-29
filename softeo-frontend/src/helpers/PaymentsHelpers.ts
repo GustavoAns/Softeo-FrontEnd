@@ -20,11 +20,7 @@ interface FormValues {
 export const sumAllPayments = (registries: IRegistros[]): number => {
   let acc = 0
   registries.map((registry) => {
-    registry.payments.map((payment) => {
-      if (payment.paid) {
-        acc += payment.value
-      }
-    })
+    acc += sumPayments(registry.payments)
   })
   return acc
 }

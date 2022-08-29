@@ -60,4 +60,5 @@ export interface IDataform {
   name: string
   totalInstallments: number
   value: number
+  date?: string | null
 }

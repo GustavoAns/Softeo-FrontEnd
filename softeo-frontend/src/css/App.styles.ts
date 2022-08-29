@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import { media } from './media'
 
 export const Container = styled.div`
+  font-family: 'Ubuntu', sans-serif;
+  background: #c8d8e4;
   display:grid;
   height:100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -24,17 +26,22 @@ export const Container = styled.div`
  `};
 `
 export const Navbar = styled.nav`
-  background: #a7ffeb;
+  background: #ffffff;
   grid-area: nav;
+  display: flex;
+  justify-content: space-between;
+  img {
+    width: 17rem;
+    margin: auto;
+  }
 `
 
 export const Main = styled.main`
-  background: #84ffff;
+  background: #cd8e4;
   grid-area: main;
   overflow: auto;
 `
 export const CardList = styled.div`
-  background: yellow;
   margin: 1rem;
   display: grid;
   gap: 1rem;
@@ -47,37 +54,48 @@ export const CardList = styled.div`
 `
 
 export const Sidebar = styled.div`
-  background: #18ffff;
+  background: #2b6777;
   grid-area: sidebar;
 `
 
 export const Content1 = styled.div`
-  background: #6fffd2;
+  background: #2b6777;
+  color: #f2f2f2;
   grid-area: content1;
   text-align:center;
 `
 
 export const Content2 = styled.div`
-  background: #64ffda;
+  background: #2b6777;
+  color: #f2f2f2;
   grid-area: content2;
   text-align:center;
 `
 
 export const Content3 = styled.div`
-  background: #73ffba;
+  background: #2b6777;
+  color: #f2f2f2;
   grid-area: content3;
   text-align:center;
 `
 
+export const HeavySpan = styled.span`
+  font-weight: 900;
+`
+
 export const Footer = styled.footer`
-  background: #1de9b6;
+  background: #2b6777;
   grid-area: footer;
+  display: flex;
+  justify-content: space-between;
+  color: #f2f2f2;
+  padding: 1em;
 `
 
 export const Card = styled.div`
   border-radius: 1rem;
   padding: 0.5rem;
-  background: #d3e877;
+  background: #2b6777;
   box-shadow: 0 0 10px 5px gray;
   display:grid;
   width: 20rem;
@@ -98,33 +116,33 @@ export const Cardname = styled.div`
   border-radius: 1rem;
   padding-top: 0.5rem;
   padding-left: 0.4em;
-  background: #e9f390;
+  background: #f2f2f2;
   grid-area: cardname;
 `
 export const Cardcpf = styled.div`
   border-radius: 1rem;
   padding: 0.2rem;
   padding-left: 0.4em;
-  background: #e9f390;
+  background: #f2f2f2;
   grid-area: cardcpf;
 `
 export const Cardintdate = styled.div`
   border-radius: 1rem;
   padding-left: 0.4em;
-  background: #e9f390;
+  background: #f2f2f2;
   grid-area: cardintdate;
 `
 export const Cardvalue = styled.div`
   border-radius: 1rem;
   padding-left: 0.4em;
-  background: #e9f390;
+  background: #f2f2f2;
   grid-area: cardvalue;
 `
 export const Cardinstallments = styled.div`
   border-radius: 1rem;
   padding-top: 0.5rem;
   padding-left: 0.4em;
-  background: #e9f390;
+  background: #f2f2f2;
   grid-area: cardinstallments;
 `
 
@@ -140,6 +158,7 @@ export const Button1 = styled.button`
 `
 export const Button2 = styled.button`
   font-size: 1.2rem;
+  color: white;
   background: orange;
   border: 2;
   border-radius: 50px;
@@ -159,7 +178,6 @@ export const Button3 = styled.button`
 `
 
 export const Filters = styled.div`
-  background: red;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.7fr 1fr 1fr 1fr;
@@ -193,7 +211,8 @@ export const Label = styled.label`
 `
 
 export const LabelSideBar1 = styled.label`
-  background: green;
+  background: #52ab98;
+  color: #f2f2f2;
   border-radius: 1rem;
   height: 2.6rem;
   width: 10rem;
@@ -202,7 +221,8 @@ export const LabelSideBar1 = styled.label`
 `
 
 export const LabelSideBar2 = styled.label`
-  background: green;
+  background: #52ab98;
+  color: #f2f2f2;
   border-radius: 1rem;
   height: 2.6rem;
   width: 10rem;
@@ -211,7 +231,8 @@ export const LabelSideBar2 = styled.label`
 `
 
 export const LabelSideBar3 = styled.label`
-  background: green;
+  background: #52ab98;
+  color: #f2f2f2;
   border-radius: 1rem;
   height: 2.6rem;
   width: 10rem;
@@ -220,7 +241,8 @@ export const LabelSideBar3 = styled.label`
 `
 
 export const LabelSideBar4 = styled.label`
-  background: green;
+  background: #52ab98;
+  color: #f2f2f2;
   border-radius: 1rem;
   height: 2.6rem;
   width: 10rem;
@@ -245,7 +267,7 @@ export const ButtonCreate = styled.button`
 `
 
 export const Input = styled.input`
-  background: blue;
+  background: #f2f2f2;
   border-radius: 1rem;
   display: grid;
   width: 150px;
@@ -437,12 +459,21 @@ export const NameEditModal = styled.button`
 
 export const SimpleTitle = styled.h1`
   grid-area: SimpleHr;
+  color: #f2f2f2;
   font-size: 2.7rem;
-  border: 5px solid black;
+  border: 5px solid #f2f2f2;
   border-radius: 2rem;
   margin: auto;
 
   ${media.lessThan('lg')`
   font-size: 1.5rem;
  `};
+`
+
+export const DateContainer = styled.div`
+  padding-left: 50px;
+
+  span {
+    color: red;
+  }
 `

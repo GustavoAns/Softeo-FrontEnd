@@ -1,11 +1,10 @@
 import { IDataform, IPayment } from '../images/RegistriesImages'
 
 export const createPayments = (data: IDataform): IPayment[] => {
-  const toDayDate = new Date()
   const payments: IPayment[] = []
-  for (let i = 1; i <= data.totalInstallments; i++) {
-    const dateLimit = toDayDate
-    dateLimit.setMonth(dateLimit.getMonth() + i)
+  const dateLimit: Date = data.date != null ? new Date(data.date) : new Date()
+  for (let i = 1; i <= data.totalInstallments; i += 1) {
+    dateLimit.setMonth(dateLimit.getMonth() + 1)
     const payment: IPayment = {
       number: i,
       value: 0,
@@ -15,5 +14,6 @@ export const createPayments = (data: IDataform): IPayment[] => {
     }
     payments.push(payment)
   }
+  console.log(payments)
   return payments
 }
