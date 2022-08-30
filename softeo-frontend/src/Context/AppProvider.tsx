@@ -63,6 +63,7 @@ export const ContactsProvider: React.FC<Props> = ({ children }) => {
         ...registry
       })
       await fetchRegistries()
+      await applyFilters(filters)
     } catch (err) {
       setError(true)
     }

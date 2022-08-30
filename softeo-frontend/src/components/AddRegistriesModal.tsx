@@ -34,7 +34,7 @@ interface FormValues {
 const schema = object({
   name: string().required('O Nome é necessário').max(50, 'O limite de letras é de 50'),
   cpf: string().required('O CPF é necessário').matches(/^[0-9]+$/, 'Insira somente numeros').min(11, 'O cpf deve ter 11 digitos').max(11, 'O cpf deve ter 11 digitos'),
-  value: number().required('O Valor é necessário').max(1000000, 'O valor maximo é de R$1000000').min(1, 'O valor minimo é de R$1'),
+  value: string().required('O Valor é necessário').matches(/^[0-9]+$/, 'Insira somente numeros').min(1, 'O valor deve ter no minimo 1 digito').max(10, 'O valor deve ter no maximo 10 digitos'),
   totalInstallments: number().max(12, 'O limete de parcelas é de 12').min(1, 'A quantidade minima de parcelas é de 1')
 })
 
@@ -55,7 +55,7 @@ export const AddRegistriesModal = () => {
       cpf: parseInt(data.cpf),
       initialDate: newDate.toISOString(),
       name: data.name,
-      value: data.value,
+      value: Number(data.value),
       totalInstallments: data.totalInstallments,
       payments: paymentsArray
     }
@@ -94,7 +94,7 @@ export const AddRegistriesModal = () => {
       <C.Labelmodal>
         *Valor: ↴
         <C.Inputmodal
-          type="number"
+          type="text"
           {...register('value')}
           // value={ }
           // onChange={ (e: any) => handleFiltersInput(e) }

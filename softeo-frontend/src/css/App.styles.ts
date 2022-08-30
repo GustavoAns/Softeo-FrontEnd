@@ -149,7 +149,7 @@ export const Cardinstallments = styled.div`
 export const Button1 = styled.button`
   color: white;
   font-size: 2rem;
-  background: green;
+  background: #72CC86;
   border: 2;
   border-radius: 50px;
   height: 50px;
@@ -159,7 +159,7 @@ export const Button1 = styled.button`
 export const Button2 = styled.button`
   font-size: 1.2rem;
   color: white;
-  background: orange;
+  background: #ECBC2E;
   border: 2;
   border-radius: 50px;
   height: 50px;
@@ -169,7 +169,7 @@ export const Button2 = styled.button`
 export const Button3 = styled.button`
   color: white;
   font-size: 2rem;
-  background: red;
+  background: #DD3846;
   border: 2;
   border-radius: 50px;
   height: 50px;
@@ -250,7 +250,7 @@ export const LabelSideBar4 = styled.label`
   margin: auto;
 `
 export const ButtonRestFilters = styled.button`
-  background: orange;
+  background: #ECBC2E;
   border-radius: 1rem;
   height: 50px;
   width: 105px;
@@ -258,7 +258,7 @@ export const ButtonRestFilters = styled.button`
   grid-area: ButtonRestFilters;
 `
 export const ButtonCreate = styled.button`
-  background: #20ff03;
+  background: #72CC86;
   border-radius: 1rem;
   height: 50px;
   width: 105px;

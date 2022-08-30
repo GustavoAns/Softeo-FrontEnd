@@ -3,7 +3,7 @@ import React from 'react'
 import * as C from '../css/App.styles'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { object, string, number } from 'yup'
+import { object, string } from 'yup'
 import { valueFormatter } from '../helpers/Formatter'
 // import { AppContext } from '../Context/AppProvider'
 // import { ContextType, IRegistros } from '../images/RegistriesImages'
@@ -18,17 +18,17 @@ export interface Props {
 
 interface FormValues {
   method: string
-  value: number
+  value: string
 }
 
 const schema = object({
-  value: number().required('O valor é necessário').max(1000000, 'O valor maximo é de R$1000000').min(1, 'O valor minimo é de R$1'),
-  method: string().required('O metodo é necessário').max(20, 'O limite de letras é de 20')
+  value: string().required('O Valor é necessário').matches(/^[0-9]+$/, 'Insira somente numeros').min(1, 'O valor deve ter no minimo 1 digito').max(10, 'O valor deve ter no maximo 10 digitos'),
+  method: string().required('O Metodo é necessário').max(20, 'O limite de letras é de 20')
 })
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const PaymentsCard = (prop: Props) => {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ defaultValues: { value: 0, method: '' }, resolver: yupResolver(schema) })
+  const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ defaultValues: { value: '', method: '' }, resolver: yupResolver(schema) })
   const { editRegistryById } = React.useContext(AppContext) as ContextType
   const { cpf, initialDate, name, value, totalInstallments, payments, _id } = prop.registry
 

@@ -59,8 +59,12 @@ export const Sidebar = () => {
         </style>
         <DatePicker wrapperClassName="date-picker" dateFormat="dd/MM/yyyy" selected={filters.finalDate} onChange={(date: any) => handleFiltersInput(date, 'finalDate')}/>
       </C.LabelSideBar4>
-      <C.ButtonRestFilters onClick={() => onReset()}>↺Resetar Filtros</C.ButtonRestFilters>
-      <C.ButtonCreate onClick={() => setModalIsOpen(true)}>+Criar Registro</C.ButtonCreate>
+      <C.ButtonRestFilters onClick={() => onReset()}>
+        <C.HeavySpan>↺Resetar Filtros</C.HeavySpan>
+      </C.ButtonRestFilters>
+      <C.ButtonCreate onClick={() => setModalIsOpen(true)}>
+        <C.HeavySpan>+Criar Registro</C.HeavySpan>
+      </C.ButtonCreate>
     </C.Filters>
   )
 }

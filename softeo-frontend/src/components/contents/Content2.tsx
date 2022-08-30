@@ -50,7 +50,7 @@ export const Content2 = () => {
           Informações de um periodo:
         </C.HeavySpan>
         <br />
-        Altere alguma data para exibir o ganho total e as pendencias
+        Altere alguma data para exibir o ganho total
       </C.Content2>
     )
   }

@@ -12,11 +12,6 @@ export const sumPayments = (payments: IPayment[]): number => {
   return acc
 }
 
-interface FormValues {
-  method: string
-  value: number
-}
-
 export const sumAllPayments = (registries: IRegistros[]): number => {
   let acc = 0
   registries.map((registry) => {
@@ -27,7 +22,7 @@ export const sumAllPayments = (registries: IRegistros[]): number => {
 
 interface FormValues {
   method: string
-  value: number
+  value: string
 }
 
 export const editPayments = (payments: IPayment[], num: number, data: FormValues): IPayment[] => {
@@ -36,7 +31,7 @@ export const editPayments = (payments: IPayment[], num: number, data: FormValues
     if (i + 1 === num) {
       const obj = {
         number: num,
-        value: data.value,
+        value: Number(data.value),
         paid: true,
         method: data.method,
         limiteDate: payments[i].limiteDate

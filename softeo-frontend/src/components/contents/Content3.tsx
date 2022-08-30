@@ -27,7 +27,7 @@ export const Content3 = () => {
           Todos os Filtros:
         </C.HeavySpan>
         <br />
-        Altere algum filtro para exibir o ganho total e as pendencias
+        Altere algum filtro para exibir o ganho total
       </C.Content3>
     )
   }

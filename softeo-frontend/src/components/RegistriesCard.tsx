@@ -29,7 +29,7 @@ export const RegistriesCard = (prop: Props) => {
       </C.Cardname>
       <C.Cardcpf>
         <C.HeavySpan>CPF: </C.HeavySpan>
-        CPF: {cpf}
+        {cpf}
       </C.Cardcpf>
       <C.Cardintdate>
         <C.HeavySpan>Data Inicial: </C.HeavySpan>
