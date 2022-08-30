@@ -52,7 +52,7 @@ export const AddRegistriesModal = () => {
     const newDate = dateSelected != null ? dateSelected : new Date()
     setDateSelected(null)
     const registry = {
-      cpf: parseInt(data.cpf),
+      cpf: data.cpf,
       initialDate: newDate.toISOString(),
       name: data.name,
       value: Number(data.value),

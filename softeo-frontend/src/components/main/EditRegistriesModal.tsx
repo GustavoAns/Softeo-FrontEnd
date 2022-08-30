@@ -50,7 +50,7 @@ export const EditRegistriesModal = (prop: Props) => {
     const paymentsArray = resizePayments(prop.registry.payments, data.totalInstallments)
     const payment = {
       _id: prop.registry._id,
-      cpf: parseInt(data.cpf),
+      cpf: data.cpf,
       initialDate: prop.registry.initialDate,
       name: data.name,
       value: data.value,
