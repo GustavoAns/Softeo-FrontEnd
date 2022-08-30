@@ -1,13 +1,9 @@
 import React from 'react'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-import * as C from '../css/App.styles'
-import { AppContext } from '../Context/AppProvider'
-import { ContextType, IFilters } from '../images/RegistriesImages'
-// type InputProps = {
-//   value: string
-//   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-// }
+import * as C from '../../css/App.styles'
+import { AppContext } from '../../Context/AppProvider'
+import { ContextType, IFilters } from '../../images/RegistriesImages'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const Sidebar = () => {

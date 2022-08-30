@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import { AppContext } from '../Context/AppProvider'
-import * as C from '../css/App.styles'
-import { stringDateFormatter, valueFormatter } from '../helpers/Formatter'
-// import { AppContext } from '../Context/AppProvider'
-// import { ContextType, IRegistros } from '../images/RegistriesImages'
-import { ContextType, IRegistros } from '../images/RegistriesImages'
+import { AppContext } from '../../Context/AppProvider'
+import * as C from '../../css/App.styles'
+import { stringDateFormatter, valueFormatter } from '../../helpers/Formatter'
+import { ContextType, IRegistros } from '../../images/RegistriesImages'
 import { EditRegistriesModal } from './EditRegistriesModal'
 import { PaymentsModal } from './PaymentsModal'
 
@@ -43,9 +41,9 @@ export const RegistriesCard = (prop: Props) => {
         <C.HeavySpan>Parcelas Acordadas: </C.HeavySpan>
         {totalInstallments}
       </C.Cardinstallments>
-      <C.Button1 onClick={() => setModalCardIsOpen(true)}>$</C.Button1>
-      <C.Button2 onClick={() => setEditModalIsOpen(true)}>Edit</C.Button2>
-      <C.Button3 onClick={() => removeRegistryById(prop.registry)}>X</C.Button3>
+      <C.ButtonGreen onClick={() => setModalCardIsOpen(true)}>$</C.ButtonGreen>
+      <C.ButtonYellow onClick={() => setEditModalIsOpen(true)}>Edit</C.ButtonYellow>
+      <C.ButtonRed onClick={() => removeRegistryById(prop.registry)}>X</C.ButtonRed>
     </C.Card>
   )
 }

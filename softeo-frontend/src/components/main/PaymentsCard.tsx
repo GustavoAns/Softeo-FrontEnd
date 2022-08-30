@@ -1,15 +1,13 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React from 'react'
-import * as C from '../css/App.styles'
+import * as C from '../../css/App.styles'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { object, string } from 'yup'
-import { valueFormatter } from '../helpers/Formatter'
-// import { AppContext } from '../Context/AppProvider'
-// import { ContextType, IRegistros } from '../images/RegistriesImages'
-import { ContextType, IPayment, IRegistros } from '../images/RegistriesImages'
-import { editPayments, removePayments } from '../helpers/PaymentsHelpers'
-import { AppContext } from '../Context/AppProvider'
+import { valueFormatter } from '../../helpers/Formatter'
+import { ContextType, IPayment, IRegistros } from '../../images/RegistriesImages'
+import { editPayments, removePayments } from '../../helpers/PaymentsHelpers'
+import { AppContext } from '../../Context/AppProvider'
 
 export interface Props {
   payment: IPayment
@@ -77,8 +75,8 @@ export const PaymentsCard = (prop: Props) => {
       </C.Cardmethod>
       {prop.payment.paid
         ? <span></span>
-        : <C.Button1 type="submit">$</C.Button1>}
-      <C.Button3 onClick={() => onRemove()}>X</C.Button3>
+        : <C.ButtonGreen type="submit">$</C.ButtonGreen>}
+      <C.ButtonRed onClick={() => onRemove()}>X</C.ButtonRed>
     </C.PaymentsCard>
   )
 }

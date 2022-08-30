@@ -1,15 +1,11 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React from 'react'
-import * as C from '../css/App.styles'
-
+import * as C from '../../css/App.styles'
 import Modal from 'react-modal'
-
-// import { AppContext } from '../Context/AppProvider'
-// import { ContextType, IRegistros } from '../images/RegistriesImages'
-import { IRegistros, UseState } from '../images/RegistriesImages'
+import { IRegistros, UseState } from '../../images/RegistriesImages'
 import { CardListPymants } from './CardListPayments'
-import { sumPayments } from '../helpers/PaymentsHelpers'
-import { valueFormatter } from '../helpers/Formatter'
+import { sumPayments } from '../../helpers/PaymentsHelpers'
+import { valueFormatter } from '../../helpers/Formatter'
 
 export interface Props {
   registry: IRegistros
@@ -31,10 +27,6 @@ const customStyles = {
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export const PaymentsModal = (prop: Props) => {
-  // const { register, handleSubmit, formState: { errors } } = useForm<FormValues>({ defaultValues: { value: 0, totalInstallments: 1 }, resolver: yupResolver(schema) })
-  // const { handleSubmit } = useForm<FormValues>({ defaultValues: { value: 0, totalInstallments: 1 }, resolver: yupResolver(schema) })
-  // const { name, cpf, initialDate, value, totalInstallments } = prop.registry as IRegistros
-
   return (
     <Modal
       isOpen={prop.modalCardIsOpen}

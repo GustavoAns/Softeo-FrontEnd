@@ -6,10 +6,10 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import Modal from 'react-modal'
 import { object, string, number } from 'yup'
-import { AppContext } from '../Context/AppProvider'
-import * as C from '../css/App.styles'
-import { ContextType, IDataform } from '../images/RegistriesImages'
-import { createPayments } from '../helpers/CreateRegistry'
+import { AppContext } from '../../Context/AppProvider'
+import * as C from '../../css/App.styles'
+import { ContextType, IDataform } from '../../images/RegistriesImages'
+import { createPayments } from '../../helpers/CreateRegistry'
 
 const customStyles = {
   content: {
@@ -86,8 +86,6 @@ export const AddRegistriesModal = () => {
         <C.Inputmodal
           type="text"
           {...register('cpf')}
-          // value={ }
-          // onChange={ (e: any) => handleFiltersInput(e) }
         />
         <C.Error>{errors?.cpf?.message}</C.Error>
       </C.Labelmodal>
@@ -96,8 +94,6 @@ export const AddRegistriesModal = () => {
         <C.Inputmodal
           type="text"
           {...register('value')}
-          // value={ }
-          // onChange={ (e: any) => handleFiltersInput(e) }
         />
         <C.Error>{errors?.value?.message}</C.Error>
       </C.Labelmodal>
@@ -106,8 +102,6 @@ export const AddRegistriesModal = () => {
         <C.Inputmodal
           type="number"
           {...register('totalInstallments')}
-          // value={ }
-          // onChange={ (e: any) => handleFiltersInput(e) }
         />
         <C.Error>{errors?.totalInstallments?.message}</C.Error>
       </C.Labelmodal>

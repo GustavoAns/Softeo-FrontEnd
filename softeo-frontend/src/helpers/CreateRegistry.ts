@@ -14,6 +14,5 @@ export const createPayments = (data: IDataform): IPayment[] => {
     }
     payments.push(payment)
   }
-  console.log(payments)
   return payments
 }

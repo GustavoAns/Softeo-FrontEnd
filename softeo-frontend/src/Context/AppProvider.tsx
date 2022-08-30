@@ -5,7 +5,7 @@ import { IRegistros, ContextType, APIRegistrosArry, Props, IFilters } from '../i
 
 export const AppContext = createContext< ContextType | null >(null)
 
-const API_URL = 'http://localhost:3001'
+const API_URL = 'https://softeo-backend.herokuapp.com'
 
 export const API = axios.create({
   baseURL: API_URL
@@ -169,14 +169,6 @@ export const ContactsProvider: React.FC<Props> = ({ children }) => {
     }
   ), [registries, filters, handleFiltersInput, loading,
     error, addRegistry])
-
-  // const context: TodoContextType = {
-  //   registries,
-  //   nameSearch,
-  //   setNameSearch,
-  //   loading,
-  //   error
-  // }
 
   return (
     // eslint-disable-next-line react/react-in-jsx-scope

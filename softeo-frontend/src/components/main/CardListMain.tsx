@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import { AppContext } from '../Context/AppProvider'
-import * as C from '../css/App.styles'
-import { ContextType } from '../images/RegistriesImages'
+import { AppContext } from '../../Context/AppProvider'
+import * as C from '../../css/App.styles'
+import { ContextType } from '../../images/RegistriesImages'
 import { RegistriesCard } from './RegistriesCard'
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-export const CardList = () => {
+export const CardListMain = () => {
   const { loading, filtedRegistries, applyFilters, filters, registries } = React.useContext(AppContext) as ContextType
 
   useEffect(() => {

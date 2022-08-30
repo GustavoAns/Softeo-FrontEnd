@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React from 'react'
-import * as C from '../css/App.styles'
+import * as C from '../../css/App.styles'
 import Modal from 'react-modal'
-import { ContextType, IDataform, IRegistros, UseState } from '../images/RegistriesImages'
+import { ContextType, IDataform, IRegistros, UseState } from '../../images/RegistriesImages'
 import { number, object, string } from 'yup'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { resizePayments } from '../helpers/PaymentsHelpers'
-import { AppContext } from '../Context/AppProvider'
+import { resizePayments } from '../../helpers/PaymentsHelpers'
+import { AppContext } from '../../Context/AppProvider'
 
 export interface Props {
   registry: IRegistros

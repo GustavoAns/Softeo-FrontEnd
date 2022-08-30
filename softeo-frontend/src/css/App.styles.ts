@@ -7,7 +7,7 @@ export const Container = styled.div`
   display:grid;
   height:100vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 2fr 15fr 4fr 2fr;
+  grid-template-rows: 2fr 15fr 4fr 1fr;
   grid-template-areas:
     'nav nav nav nav'
     'sidebar main main main'
@@ -89,7 +89,9 @@ export const Footer = styled.footer`
   display: flex;
   justify-content: space-between;
   color: #f2f2f2;
-  padding: 1em;
+  padding: 0.8em;
+  padding: auto;
+  font-size: 0.7rem;
 `
 
 export const Card = styled.div`
@@ -146,7 +148,7 @@ export const Cardinstallments = styled.div`
   grid-area: cardinstallments;
 `
 
-export const Button1 = styled.button`
+export const ButtonGreen = styled.button`
   color: white;
   font-size: 2rem;
   background: #72CC86;
@@ -156,7 +158,7 @@ export const Button1 = styled.button`
   width: 50px;
   grid-area: button1;
 `
-export const Button2 = styled.button`
+export const ButtonYellow = styled.button`
   font-size: 1.2rem;
   color: white;
   background: #ECBC2E;
@@ -166,7 +168,7 @@ export const Button2 = styled.button`
   width: 50px;
   grid-area: button2;
 `
-export const Button3 = styled.button`
+export const ButtonRed = styled.button`
   color: white;
   font-size: 2rem;
   background: #DD3846;

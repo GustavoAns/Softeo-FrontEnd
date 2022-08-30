@@ -1,11 +1,9 @@
 import React from 'react'
 import Modal from 'react-modal'
 import * as C from './css/App.styles'
-// import { AppContext } from './Context/AppProvider'
-// import { ContextType } from './images/RegistriesImages'
-import { CardList } from './components/CardList'
-import { Sidebar } from './components/Sidebar'
-import { AddRegistriesModal } from './components/AddRegistriesModal'
+import { CardListMain } from './components/main/CardListMain'
+import { Sidebar } from './components/sidebar/Sidebar'
+import { AddRegistriesModal } from './components/sidebar/AddRegistriesModal'
 import { Content1 } from './components/contents/Content1'
 import { Content2 } from './components/contents/Content2'
 import { Content3 } from './components/contents/Content3'
@@ -20,7 +18,7 @@ const App = () => {
       <AddRegistriesModal />
       <NavBar />
       <C.Main>
-        <CardList />
+        <CardListMain />
       </C.Main>
       <C.Sidebar>
         <Sidebar />
