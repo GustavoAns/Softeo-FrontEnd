@@ -7,12 +7,12 @@ A aplicação foi desenvolvida para o teste técnico da Softeo com o tema de "Co
 
 ### Frontend
 
-Utilizei todo o eco sistema do React.js em TypeScript para criar a aplicação, Context API e React hooks.
+Utilizei todo o ecossistema do React.js em TypeScript para criar a aplicação, Context API e React hooks.
 Como bibliotecas de CSS .
 
- ### Backend - *spoiler*
+### Backend - *spoiler*
  
- Utilizei um servidor node.js com express e como banco de dados MongoDB, para fazer o relacionamento com banco utilizei o Mongoose para facilitar a manipulação do banco.
+Utilizei um servidor node.js com express e como banco de dados MongoDB, para fazer o relacionamento com banco utilizei o Mongoose para facilitar a manipulação do banco.
 Arquitetura de camadas MSC (Model Service), ESlint para analise estática do código, Utilizei typescript seguindo conceitos POO.
 
 ---
