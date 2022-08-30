@@ -20,8 +20,8 @@ interface FormValues {
 }
 
 const schema = object({
-  value: string().required('O Valor é necessário').matches(/^[0-9]+$/, 'Insira somente numeros').min(1, 'O valor deve ter no minimo 1 digito').max(10, 'O valor deve ter no maximo 10 digitos'),
-  method: string().required('O Metodo é necessário').max(20, 'O limite de letras é de 20')
+  value: string().required('O valor é necessário').matches(/^[0-9]+$/, 'Insira somente números').min(1, 'O valor deve ter no minimo 1 digito').max(10, 'O valor deve ter no maximo 10 digitos'),
+  method: string().required('O método é necessário').max(20, 'O limite de letras é de 20')
 })
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
@@ -68,7 +68,7 @@ export const PaymentsCard = (prop: Props) => {
         <C.Error>{errors?.value?.message}</C.Error>
       </C.Paymentcardvalue>
       <C.Cardmethod>
-        Metodo: {prop.payment.paid
+        Método: {prop.payment.paid
         ? <span>{prop.payment.method}</span>
         : <C.Inputmodal {...register('method')}/>}
       <C.Error>{errors?.method?.message}</C.Error>

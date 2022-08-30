@@ -35,7 +35,7 @@ export const Content1 = () => {
   return (
     <C.Content1>
       <C.HeavySpan>
-        Mes: {month[toDay.getMonth()]}
+        Mês: {month[toDay.getMonth()]}
       </C.HeavySpan>
       <br />
       Total recebido: {valueFormatter(sumAllPayments(filtredRegistries))}

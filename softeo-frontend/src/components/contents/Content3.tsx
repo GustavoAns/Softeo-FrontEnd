@@ -24,7 +24,7 @@ export const Content3 = () => {
     return (
       <C.Content3>
         <C.HeavySpan>
-          Todos os Filtros:
+          Todos os filtros:
         </C.HeavySpan>
         <br />
         Altere algum filtro para exibir o ganho total
@@ -35,7 +35,7 @@ export const Content3 = () => {
   return (
     <C.Content3>
       <C.HeavySpan>
-        Todos os Filtros:
+        Todos os filtros:
       </C.HeavySpan>
       <br />
       Total recebido: {valueFormatter(sumAllPayments(filtedRegistries))}

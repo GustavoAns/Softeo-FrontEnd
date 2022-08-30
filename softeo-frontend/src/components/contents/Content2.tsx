@@ -47,7 +47,7 @@ export const Content2 = () => {
     return (
       <C.Content2>
         <C.HeavySpan>
-          Informações de um periodo:
+          Informações de um período:
         </C.HeavySpan>
         <br />
         Altere alguma data para exibir o ganho total

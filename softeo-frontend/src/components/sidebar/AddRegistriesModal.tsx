@@ -32,10 +32,10 @@ interface FormValues {
 }
 
 const schema = object({
-  name: string().required('O Nome é necessário').max(50, 'O limite de letras é de 50'),
-  cpf: string().required('O CPF é necessário').matches(/^[0-9]+$/, 'Insira somente numeros').min(11, 'O cpf deve ter 11 digitos').max(11, 'O cpf deve ter 11 digitos'),
-  value: string().required('O Valor é necessário').matches(/^[0-9]+$/, 'Insira somente numeros').min(1, 'O valor deve ter no minimo 1 digito').max(10, 'O valor deve ter no maximo 10 digitos'),
-  totalInstallments: number().max(12, 'O limete de parcelas é de 12').min(1, 'A quantidade minima de parcelas é de 1')
+  name: string().required('O nome é necessário').max(50, 'O limite de letras é de 50'),
+  cpf: string().required('O CPF é necessário').matches(/^[0-9]+$/, 'Insira somente números').min(11, 'O cpf deve ter 11 digitos').max(11, 'O cpf deve ter 11 digitos'),
+  value: string().required('O valor é necessário').matches(/^[0-9]+$/, 'Insira somente números').min(1, 'O valor deve ter no minimo 1 digito').max(10, 'O valor deve ter no maximo 10 digitos'),
+  totalInstallments: number().max(12, 'O limete de parcelas é de 12').min(1, 'A quantidade mínima de parcelas é de 1')
 })
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type

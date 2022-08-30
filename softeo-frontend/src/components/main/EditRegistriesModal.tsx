@@ -36,7 +36,7 @@ interface FormValues {
 
 const schema = object({
   name: string().max(50, 'O limite de letras é de 50'),
-  cpf: string().matches(/^[0-9]+$/, 'Insira somente numeros').min(11, 'O cpf deve ter 11 digitos').max(11, 'O cpf deve ter 11 digitos'),
+  cpf: string().matches(/^[0-9]+$/, 'Insira somente números').min(11, 'O cpf deve ter 11 digitos').max(11, 'O cpf deve ter 11 digitos'),
   value: number().max(1000000, 'O valor maximo é de R$1000000').min(1, 'O valor minimo é de R$1'),
   totalInstallments: number().max(12, 'O limete de parcelas é de 12').min(1, 'A quantidade minima de parcelas é de 1')
 })
@@ -70,7 +70,7 @@ export const EditRegistriesModal = (prop: Props) => {
       <C.Containereditmodal2 onSubmit={handleSubmit(onSubmit)}>
         <C.Editinfos>
           <C.Labelmodal>
-            Nome: ↴
+            *Nome: ↴
             <C.Inputmodal
               type="text"
               {...register('name')}
